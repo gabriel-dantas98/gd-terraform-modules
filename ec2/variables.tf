@@ -1,8 +1,8 @@
 
 variable "instance_tags" {
-  type = map(string)
-  default = {}
-  description = "[OPTINAL] -  Map tags with instance using."
+  type        = map(string)
+  default     = {}
+  description = "[OPTIONAL] -  Map tags with instance using."
 }
 
 variable "instance_name" {
@@ -30,31 +30,31 @@ variable "subnet_id" {
 }
 
 variable "instance_count" {
-  default = 1
+  default     = 1
   description = "[OPTIONAL] - Number instances to provisioning."
 }
 
 variable "instance_role" {
-  default = ""
+  default     = ""
   description = "[OPTIONAL] - Role attached to instance."
 }
 
 variable "ebs_volume_type" {
-  default = "gp2"
+  default     = "gp2"
   description = "[OPTIONAL] - EBS Volume type to attached in instance."
 }
 
 variable "ebs_volume_size" {
-  default = 8
+  default     = 8
   description = "[OPTIONAL] - EBS Volume size."
 }
 
 variable "user_data" {
-  default = ""
+  default     = ""
   description = "[OPTIONAL] - User data using to execute in instance."
 }
 
 variable "ebs_delete_on_termination" {
-  default = true
+  default     = true
   description = "[OPTIONAL] - Delete EBS on termination True or False."
 }

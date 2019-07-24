@@ -4,8 +4,8 @@ provider "aws" {
 }
 
 resource "aws_instance" "instance" {
-
-  count                  = var.instance_count > 1 ? var.instance_count : 1 
+  
+  count                  = var.instance_count > 1 ? var.instance_count : 1
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_pair
@@ -15,8 +15,8 @@ resource "aws_instance" "instance" {
   user_data              = var.user_data
 
   root_block_device {
-    volume_type = var.ebs_volume_type
-    volume_size = var.ebs_volume_size
+    volume_type           = var.ebs_volume_type
+    volume_size           = var.ebs_volume_size
     delete_on_termination = var.ebs_delete_on_termination
   }
 
