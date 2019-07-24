@@ -1,4 +1,10 @@
 
+variable "instance_tags" {
+  type = map(string)
+  default = {}
+  description = "[OPTINAL] -  Map tags with instance using."
+}
+
 variable "instance_name" {
   description = "[REQUIRED] - Instance name using in Tag Name."
 }
