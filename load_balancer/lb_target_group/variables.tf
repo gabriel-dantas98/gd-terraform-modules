@@ -26,28 +26,37 @@ variable "target_group_tags" {
 }
 
 variable "health_check_enabled" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - Indicates whether health checks are enabled."
 }
 variable "health_check_healthy_threshold" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The number of consecutive health checks successes required."
 }
 variable "health_check_unhealthy_threshold" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] -  The number of consecutive health check failures required."
 }
 
 variable "health_check_timeout" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The amount of time, in seconds, during which no response means a failed health check."
 }
 variable "health_check_interval" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The approximate amount of time, in seconds, between health checks of an individual target."
 }
 variable "health_check_path" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The destination for the health check request."
 }
 variable "health_check_port" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The port to use to connect with the target."
 }
 
 variable "health_check_matcher" {
-  description = "[REQUIRED] -"
+  description = "[REQUIRED] - The HTTP codes to use when checking for a successful response from a target."
 }
+variable "target_id" {
+  description = "[REQUIRED] - The ID of the target."
+}
+
+variable "instance_port" {
+  default = ""
+  description = "[OPTIONAL] - The instance port when target group type is instance."
+}
+
