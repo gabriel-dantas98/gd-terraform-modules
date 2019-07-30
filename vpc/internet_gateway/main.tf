@@ -3,5 +3,5 @@ resource "aws_internet_gateway" "internet_gateway" {
 
   tags = {
     Name = "IGW-${var.vpc_name}"
-  }  
+  }
 }

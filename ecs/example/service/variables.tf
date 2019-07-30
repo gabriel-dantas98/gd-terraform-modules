@@ -150,6 +150,7 @@ variable "dns_name" {
 variable "route53_zone_id" {
   default = "KKKKKKKKK"
 }
+
 variable "ecr_repository_name" {
   default = "5416546584.dkr.ecr.us-east-1.amazonaws.com/app-image:latest"
 }

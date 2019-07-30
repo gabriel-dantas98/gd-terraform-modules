@@ -1,4 +1,3 @@
-
 module "lambda" {
   source        = "./../../modules/lambda"
   bucket_name   = "gb-lambda-bucket"

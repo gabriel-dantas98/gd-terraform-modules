@@ -1,6 +1,7 @@
 module "autoscaling_group" {
     //source = "git::https://github.com/gabriel-dantas98/gd-terraform-modules.git//auto_scaling"
     source             = "../"
+    
     autoscaling_group_name = var.asg_name
     launch_configuration_name = var.lc_name
     desired_capacity = var.desired_capacity
@@ -10,6 +11,7 @@ module "autoscaling_group" {
     availability_zones = var.availability_zones
 
     target_group_arns = var.target_group_arns
+    launch_configuration_name = var.lc_name
 
     health_check_type = var.health_check_type
     health_check_grace_period = var.health_check_grace_period
