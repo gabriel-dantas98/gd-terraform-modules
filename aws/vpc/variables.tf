@@ -18,7 +18,9 @@ variable "enable_dns_hostnames" {
 }
 
 # SUBNETS VARIABLEs
-variable "network_bits" {}
+variable "network_bits" {
+  default = 8
+}
 
 variable "map_public_ip_on_launch" {
   default = true
@@ -34,4 +36,3 @@ variable "assign_generated_ipv6_cidr_block" {
 variable "public_subnet_cidrs" {}
 
 variable "private_subnet_cidrs" {}
-
