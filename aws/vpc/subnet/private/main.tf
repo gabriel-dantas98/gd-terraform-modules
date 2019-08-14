@@ -2,7 +2,7 @@ resource "aws_subnet" "subnet" {
 
   vpc_id = var.vpc_id
 
-  count = length(var.subnets_cidrs)
+  count = length(var.subnets_cidrs) > 0 ? length(var.subnets_cidrs) : 0
 
   cidr_block = var.subnets_cidrs[count.index]
   availability_zone = var.subnet_availability_zones[count.index]
@@ -42,4 +42,3 @@ resource "aws_route_table_association" "rt_ass" {
   subnet_id      = aws_subnet.subnet[count.index].id
   route_table_id = aws_route_table.route_table[count.index].id
 }
-

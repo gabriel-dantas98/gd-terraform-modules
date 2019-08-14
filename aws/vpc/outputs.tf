@@ -125,17 +125,17 @@ output "database_subnet_ngw_subnet_id" {
   description = "The Subnet ID of the subnet in which the NAT gateway is placed."
 }
 
-output "priv_subnet_ngw_public_ip" {
-  value = module.private_subnet.ngw_public_ip
+output "database_subnet_ngw_public_ip" {
+  value = module.database_subnet.ngw_public_ip
   description = "The public IP address of the NAT Gateway."
 }
 
-output "priv_subnet_ngw_eip_id" {
-  value = module.private_subnet.ngw_eip_id
+output "database_subnet_ngw_eip_id" {
+  value = module.database_subnet.ngw_eip_id
   description = "Contains the Elastic IP allocation ID."
 }
 
 output "priv_subnet_rt_id" {
-  value = module.private_subnet[*].rt_id
-  description = "List with IDs of private subnet route tables."
+  value = module.database_subnet[*].rt_id
+  description = "List with IDs of database subnet route tables."
 }

@@ -1,7 +1,7 @@
 module "main_vpc" {
 
-   //source = "git::https://github.com/gabriel-dantas98/gd-terraform-modules.git//vpc"
-  source                = "../"
+  source = "git::https://github.com/gabriel-dantas98/gd-terraform-modules.git//aws/vpc"
+  # source                = "../"
 
   vpc_name = var.vpc_name
   vpc_cidr = var.vpc_cidr 

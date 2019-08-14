@@ -14,8 +14,6 @@ resource "aws_vpc" "main" {
 module "public_subnet" {
   source = "./subnet/public"
 
-  count = length(var.public_subnet_cidrs) > 0 ? length(var.public_subnet_cidrs) : 0 
-
   vpc_name                  = var.vpc_name
   vpc_id                    = aws_vpc.main.id
 
@@ -27,8 +25,6 @@ module "public_subnet" {
 module "private_subnet" {
   source = "./subnet/private"
 
-  count = length(var.private_subnet_cidrs) > 0 ? length(var.private_subnet_cidrs) : 0
-
   vpc_name                  = var.vpc_name
   vpc_id                    = aws_vpc.main.id
   
@@ -39,8 +35,6 @@ module "private_subnet" {
 
 module "database_subnet" {
   source = "./subnet/private"
-
-  count = length(var.database_subnet_cidrs) > 0 ? length(var.database_subnet_cidrs) : 0
 
   vpc_name                  = var.vpc_name
   vpc_id                    = aws_vpc.main.id

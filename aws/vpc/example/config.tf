@@ -9,7 +9,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     encrypt = true
-    bucket = "main_vpc"
+    bucket  = "gb-infra"
     region  = "us-east-1"
     key     = "network/main_vpc.tfstate"
   }
