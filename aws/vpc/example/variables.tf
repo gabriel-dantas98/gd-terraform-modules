@@ -5,7 +5,7 @@ variable "vpc_name" {
 }
 
 variable "vpc_cidr" {
-    default = "10.1.0.0/16"
+    default = "10.6.0.0/16"
 }
 
 # SUBNETS VARIABLEs
