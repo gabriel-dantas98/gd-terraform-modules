@@ -135,7 +135,7 @@ output "database_subnet_ngw_eip_id" {
   description = "Contains the Elastic IP allocation ID."
 }
 
-output "priv_subnet_rt_id" {
+output "database_subnet_rt_id" {
   value = module.database_subnet[*].rt_id
   description = "List with IDs of database subnet route tables."
 }
