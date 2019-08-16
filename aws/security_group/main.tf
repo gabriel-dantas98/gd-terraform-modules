@@ -28,4 +28,5 @@ resource "aws_security_group" "security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   
+  tags = map("Name", var.instance_name)
 }
