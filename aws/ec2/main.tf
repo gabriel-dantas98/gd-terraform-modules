@@ -24,7 +24,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_eip" "lb" {
-  count    = var.attach_elastic_ip == true ? 0 : 1
-  instance = aws_instance.instance.id
+  count    = var.attach_elastic_ip == true ? var.instance_count : 1
+  instance = aws_instance.instance[count.index].id
   vpc      = true
 }
