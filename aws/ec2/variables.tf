@@ -58,3 +58,8 @@ variable "ebs_delete_on_termination" {
   default     = true
   description = "[OPTIONAL] - Delete EBS on termination True or False."
 }
+
+variable "attach_elastic_ip" {
+  default     = false
+  description = "[OPTIONAL] - Flag to set instance have Elastic IP"
+}

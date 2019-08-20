@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "instance" {
-  
+
   count                  = var.instance_count > 1 ? var.instance_count : 1
   ami                    = var.ami_id
   instance_type          = var.instance_type
@@ -21,4 +21,10 @@ resource "aws_instance" "instance" {
   }
 
   tags = merge(var.instance_tags, map("Name", var.instance_name, "Terraformed", "true"))
+}
+
+resource "aws_eip" "lb" {
+  count    = var.attach_elastic_ip == true ? 0 : 1
+  instance = aws_instance.instance.id
+  vpc      = true
 }
